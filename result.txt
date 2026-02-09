@@ -1,0 +1,83 @@
+============================================================
+LOAN APPROVAL PREDICTION
+============================================================   
+
+Dataset shape: (50000, 20)
+Target distribution:
+loan_status
+1    27523
+0    22477
+Name: count, dtype: int64
+
+Total features: 18
+Numerical (15): ['age', 'years_employed', 'annual_income', 'credit_score', 'credit_history_years', 'savings_assets', 'current_debt', 'defaults_on_file', 'delinquencies_last_2yrs', 'derogatory_marks', 'loan_amount', 'interest_rate', 'debt_to_income_ratio', 'loan_to_income_ratio', 'payment_to_income_ratio']
+Categorical (3): ['occupation_status', 'product_type', 'loan_intent']
+
+Train: 40000 samples | Test: 10000 samples
+
+============================================================   
+DECISION TREE
+============================================================   
+
+Accuracy: 0.8915
+
+Confusion Matrix:
+[[3856  649]
+ [ 436 5059]]
+
+                 Precision     Recall   F1-Score    Support    
+-----------------------------------------------------------    
+    Rejected(0)     0.8984     0.8559     0.8767       4505    
+    Approved(1)     0.8863     0.9207     0.9032       5495    
+-----------------------------------------------------------    
+       Accuracy                           0.8915      10000    
+
+============================================================   
+RANDOM FOREST
+============================================================   
+
+Training Random Forest...
+  Trained 10/100 trees
+  Trained 20/100 trees
+  Trained 30/100 trees
+  Trained 40/100 trees
+  Trained 50/100 trees
+  Trained 60/100 trees
+  Trained 70/100 trees
+  Trained 80/100 trees
+  Trained 90/100 trees
+  Trained 100/100 trees
+
+Accuracy: 0.9095
+
+Confusion Matrix:
+[[4020  485]
+ [ 420 5075]]
+
+                 Precision     Recall   F1-Score    Support    
+-----------------------------------------------------------    
+    Rejected(0)     0.9054     0.8923     0.8988       4505    
+    Approved(1)     0.9128     0.9236     0.9181       5495    
+-----------------------------------------------------------    
+       Accuracy                           0.9095      10000    
+
+OOB Score: 0.9104
+
+Top 10 Feature Importances:
+  1. credit_score                   0.2265
+  2. debt_to_income_ratio           0.1779
+  3. credit_history_years           0.0710
+  4. interest_rate                  0.0592
+  5. delinquencies_last_2yrs        0.0554
+  6. loan_intent                    0.0540
+  7. loan_to_income_ratio           0.0439
+  8. payment_to_income_ratio        0.0426
+  9. defaults_on_file               0.0424
+  10. age                            0.0403
+
+============================================================   
+SUMMARY
+============================================================   
+  Decision Tree Accuracy: 0.8915
+  Random Forest Accuracy: 0.9095
+  Improvement:            +0.0180

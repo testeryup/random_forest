@@ -7,3 +7,6 @@ class Node:
         self.value = value       # lá
         self.gini = gini
         self.n_samples = n_samples
+
+    def is_leaf(self):
+        return self.value is not None
